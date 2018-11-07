@@ -1,0 +1,256 @@
+<!--
+	嘁...
+	你不该来到这里，
+	快粗K！
+-->
+<!DOCTYPE html>
+<html>
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="https://music.163.com/outchain/player?type=2&id=496902072&auto=1&height=66"></iframe>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"      href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<meta charset="GB2312">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+ 
+	<title>管理大大辛苦了</title>
+<style>
+    table.lamp 
+ {
+     width:100%;
+     border:0px solid #808080;
+ }
+    table.lamp th, td 
+ { 
+    padding:10px
+ }
+    table.lamp th 
+ {
+    width:40px;
+ }
+
+</style>
+
+<style>
+.ps {
+    background-color:black;
+    color:#808080;
+    margin:20px;
+    padding:20px;
+}	
+</style>
+
+<style type="text/css">
+body
+{ 
+background:url(http://imgsrc.baidu.com/forum/pic/item/4b847dcec3fdfc03aaf191e8d93f8794a5c22649.jpg)fixed center; 
+}
+</style>
+
+<body oncontextmenu=self.event.returnValue=false onselectstart="return false">
+
+<script>
+
+    !function(win, lib) {
+        var timer,
+            doc     = win.document,
+            docElem = doc.documentElement,
+ 
+            vpMeta   = doc.querySelector('meta[name="viewport"]'),
+            flexMeta = doc.querySelector('meta[name="flexible"]'),
+ 
+            dpr   = 0,
+            scale = 0,
+ 
+            flexible = lib.flexible || (lib.flexible = {});
+ 
+        if (vpMeta) {
+ 
+            var initial = vpMeta.getAttribute("content").match(/initial\-scale=([\d\.]+)/);
+ 
+            if (initial) {
+                scale = parseFloat(initial[1]); 
+                dpr = parseInt(1 / scale); 
+            }
+ 
+        }
+        else if (flexMeta) {
+            var flexMetaContent = flexMeta.getAttribute("content");
+            if (flexMetaContent) {
+ 
+                var initial = flexMetaContent.match(/initial\-dpr=([\d\.]+)/),
+                    maximum = flexMetaContent.match(/maximum\-dpr=([\d\.]+)/);
+ 
+                if (initial) {
+                    dpr = parseFloat(initial[1]);
+                    scale = parseFloat((1 / dpr).toFixed(2));
+                }
+ 
+                if (maximum) {
+                    dpr = parseFloat(maximum[1]);
+                    scale = parseFloat((1 / dpr).toFixed(2));
+                }
+            }
+        }
+ 
+        if (!dpr && !scale) {
+            var u = (win.navigator.appVersion.match(/android/gi), win.navigator.appVersion.match(/iphone/gi)),
+                _dpr = win.devicePixelRatio;
+ 
+            dpr = u ? ( (_dpr >= 3 && (!dpr || dpr >= 3))
+                    ? 3
+                    : (_dpr >= 2 && (!dpr || dpr >= 2))
+                        ? 2
+                        : 1
+                )
+                : 1;
+ 
+            scale = 1 / dpr;
+        }
+ 
+        docElem.setAttribute("data-dpr", dpr);
+ 
+        if (!vpMeta) {
+            vpMeta = doc.createElement("meta");
+ 
+            vpMeta.setAttribute("name", "viewport");
+            vpMeta.setAttribute("content",
+                "initial-scale=" + scale + ", maximum-scale=" + scale + ", minimum-scale=" + scale + ", user-scalable=no");
+ 
+            if (docElem.firstElementChild) {
+                docElem.firstElementChild.appendChild(vpMeta)
+            } else {
+                var div = doc.createElement("div");
+                div.appendChild(vpMeta);
+                doc.write(div.innerHTML);
+            }
+        }
+ 
+        function setFontSize() {
+            var winWidth = docElem.getBoundingClientRect().width;
+ 
+            if (winWidth / dpr > 540) {
+                (winWidth = 540 * dpr);
+            }
+            var baseSize = winWidth / 10;
+ 
+            docElem.style.fontSize = baseSize + "px";
+            flexible.rem = win.rem = baseSize;
+        }
+ 
+        win.addEventListener("resize", function() {
+            clearTimeout(timer);
+            timer = setTimeout(setFontSize, 300);
+        }, false);
+ 
+        win.addEventListener("orientationchange", function() {
+            clearTimeout(timer);
+            timer = setTimeout(setFontSize, 300);
+        }, false);
+ 
+        win.addEventListener("pageshow", function(e) {
+            if (e.persisted) {
+                clearTimeout(timer);
+                timer = setTimeout(setFontSize, 300);
+            }
+        }, false);
+ 
+        if ("complete" === doc.readyState) {
+            doc.body.style.fontSize = 12 * dpr + "px";
+        } else {
+            doc.addEventListener("DOMContentLoaded", function() {
+                doc.body.style.fontSize = 12 * dpr + "px";
+            }, false);
+        }
+ 
+        setFontSize();
+ 
+        flexible.dpr = win.dpr = dpr;
+ 
+        flexible.refreshRem = setFontSize;
+ 
+        flexible.rem2px = function(d) {
+            var c = parseFloat(d) * this.rem;
+            if ("string" == typeof d && d.match(/rem$/)) {
+                c += "px";
+            }
+            return c;
+        };
+ 
+        flexible.px2rem = function(d) {
+            var c = parseFloat(d) / this.rem;
+ 
+            if ("string" == typeof d && d.match(/px$/)) {
+                c += "rem";
+            }
+            return c;
+        }
+    }(window, window.lib || (window.lib = {}));
+ 
+</script>
+
+<script type="text/javascript">
+        window.onload = function(){
+            document.onkeydown = function (){
+                var e = window.event || arguments[0];
+                //F12
+                if(e.keyCode == 123){
+                    return false;
+                //Ctrl+Shift+I
+                }else if((e.ctrlKey) && (e.shiftKey) && (e.keyCode == 73)){
+                    return false;
+                //Shift+F10
+                }else if((e.shiftKey) && (e.keyCode == 121)){
+                    return false;
+                //Ctrl+U
+                }else if((e.ctrlKey) && (e.keyCode == 85)){
+                    return false;
+                }
+            };
+            document.oncontextmenu = function (){
+                return false;
+            }
+        }
+
+</script>
+</head>
+
+<table class="lamp">
+<tr>
+  <th>
+    <a href="https://tieba.baidu.com/f?kw=%CA%C0%BD%E7rpg&fr=ala0&tpl=5"target="_blank">
+    <img src="https://gss3.bdstatic.com/84oSdTum2Q5BphGlnYG/timg?wapp&quality=80&size=b150_150&subsize=20480&cut_x=0&cut_w=0&cut_y=0&cut_h=0&sec=1369815402&srctrace&di=ad7732b544d726c1f21b00d1191d3cd1&wh_rate=null&src=http%3A%2F%2Fimgsrc.baidu.com%2Fforum%2Fpic%2Fitem%2F5243fbf2b2119313653243ae62380cd791238dbf.jpg"alt="世界RPG"></a>
+  </th>
+  <td><font size="4" face=SimHei color="#808080">
+	<p>我，是个鸽子</p>
+	<p>我，么有截图</p>
+	<p>我，也么录像</p>
+	<p>但，我爱世界</p>
+  </font></td>
+</tr>
+</table>
+
+</br>
+</br>
+<p style="font-size:15px"><a href="https://tieba.baidu.com/p/5651715146?pid=119206713478&cid=0&red_tag=3491800545#119206713478" target="_blank">原帖</a></p>
+
+<a href="http://imgsrc.baidu.com/forum/pic/item/06055ffd5266d016512bf9459b2bd40734fa358f.jpg"target="_blank">
+<img src="https://imgsa.baidu.com/forum/w%3D580/sign=2ec9f5b2c21b9d168ac79a69c3deb4eb/06055ffd5266d016512bf9459b2bd40734fa358f.jpg" alt="活动物品截图">
+</a>
+</br>
+<a href="http://imgsrc.baidu.com/forum/pic/item/a35c3858ccbf6c81a5484b85b03eb13532fa40ba.jpg"target="_blank">
+<img src="https://imgsa.baidu.com/forum/w%3D580/sign=308c648ed939b6004dce0fbfd9513526/a35c3858ccbf6c81a5484b85b03eb13532fa40ba.jpg" alt="活动物品截图">
+</a>
+</br>
+<a href="http://imgsrc.baidu.com/forum/pic/item/350f8bd9f2d3572cb399fbb18613632763d0c347.jpg"target="_blank">
+<img src="https://imgsa.baidu.com/forum/w%3D580/sign=b993ff33d1c451daf6f60ce386fc52a5/350f8bd9f2d3572cb399fbb18613632763d0c347.jpg" alt="活动物品截图">
+</a>
+</br>
+<a href="http://imgsrc.baidu.com/forum/pic/item/9e9a44345982b2b73aca5ea93dadcbef77099b61.jpg"target="_blank">
+<img src="https://imgsa.baidu.com/forum/w%3D580/sign=43691e5562061d957d4637304bf50a5d/9e9a44345982b2b73aca5ea93dadcbef77099b61.jpg" alt="活动物品截图">
+</a>
+
+<div align="center"class="ps">
+<p style="font-size:15px;font-family:SimHei">负伤肝活动不容易呀，更多的证明短时间我也拿不出来，有其他问题<a href="mailto:every_moment@qq.com?subject=">请联系我。</a></p>
+</div>
+</body>
+</html>
